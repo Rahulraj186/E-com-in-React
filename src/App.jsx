@@ -1,40 +1,25 @@
 import React from "react";
-import EcomNavbar from "./Components/EcomNavbar";
-import Buttons from "./Components/Buttons";
-import Cards from "./Components/Cards";
+import { Route, Routes } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import { Home } from "./Pages/Home";
+import { About } from "./Pages/About";
+import { Store } from "./Pages/Store";
+
+import Header from "./Components/Header";
+import { ShoppingCartProvider } from "./Context/ShoppingCartContext";
 
 const App = () => {
-  const cartElements = [
-    {
-      title: "Colors",
-      price: 100,
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-      quantity: 2,
-    },
-
-    {
-      title: "Black and white Colors",
-      price: 50,
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-      quantity: 3,
-    },
-
-    {
-      title: "Yellow and Black Colors",
-      price: 70,
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-      quantity: 1,
-    },
-  ];
   return (
-    <div>
-      <EcomNavbar />
-      <Buttons />
-      <Cards items={cartElements} />
-    </div>
+    <ShoppingCartProvider>
+      <Header />
+      <Container>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/Store" element={<Store />}></Route>
+          <Route path="/About" element={<About />}></Route>
+        </Routes>
+      </Container>
+    </ShoppingCartProvider>
   );
 };
 
