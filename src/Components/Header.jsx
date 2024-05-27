@@ -20,6 +20,9 @@ const Header = () => {
             <Nav.Link to="/About" as={NavLink}>
               About
             </Nav.Link>
+            <Nav.Link to="/ContactUs" as={NavLink}>
+              Contact Us
+            </Nav.Link>
           </Nav>
           {cartQuantity > 0 && (
             <Button
