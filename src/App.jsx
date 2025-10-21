@@ -1,8 +1,12 @@
 import React from 'react'
-
+import Body from './Components/Body.jsx';
+import Navbar from './Components/Navbar.jsx';
 const App = () => {
   return (
-    <div>App</div>
+    <div className='min-h-screen pt-40'>
+    <Navbar  />
+    <Body/>
+    </div>
   )
 }
 
